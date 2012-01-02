@@ -14,8 +14,15 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 </div>
-<%= yield %>
 
+ <% if user_signed_in? %>
+    <ul class="tabs">
+    <li><a href="../home">Home</a></li>
+    <li><a href="../criminals">Records</a></li>
+    <li><a href="../criminals/new">Upload Photo</a></li>
+    </ul>
+<%end%>
+<%= yield %>
 </body>
   <%= render 'layouts/footer' %>
 </html>

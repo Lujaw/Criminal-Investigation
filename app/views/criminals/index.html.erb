@@ -1,0 +1,37 @@
+<h1>Listing criminals</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Race</th>
+    <th>Eye color</th>
+    <th>Hair color</th>
+    <th>Photo</th>
+    <th>Additional info</th>
+    <th>Age</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @criminals.each do |criminal| %>
+  <tr>
+    <td><%= criminal.name %></td>
+    <td><%= criminal.gender %></td>
+    <td><%= criminal.race %></td>
+    <td><%= criminal.eye_color %></td>
+    <td><%= criminal.hair_color %></td>
+    <td><%= criminal.photo %></td>
+    <td><%= criminal.additional_info %></td>
+    <td><%= criminal.age %></td>
+    <td><%= link_to 'Show', criminal %></td>
+    <td><%= link_to 'Edit', edit_criminal_path(criminal) %></td>
+    <td><%= link_to 'Destroy', criminal, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Criminal', new_criminal_path %>

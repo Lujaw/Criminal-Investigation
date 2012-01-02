@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @criminal.name %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @criminal.gender %>
+</p>
+
+<p>
+  <b>Race:</b>
+  <%= @criminal.race %>
+</p>
+
+<p>
+  <b>Eye color:</b>
+  <%= @criminal.eye_color %>
+</p>
+
+<p>
+  <b>Hair color:</b>
+  <%= @criminal.hair_color %>
+</p>
+
+<p>
+  <b>Photo:</b>
+  <%= @criminal.photo %>
+</p>
+
+<p>
+  <b>Additional info:</b>
+  <%= @criminal.additional_info %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @criminal.age %>
+</p>
+
+
+<%= link_to 'Edit', edit_criminal_path(@criminal) %> |
+<%= link_to 'Back', criminals_path %>

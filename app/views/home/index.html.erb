@@ -1,5 +1,6 @@
+asdfjhgasudf
 <% if user_signed_in? %>
-  <%= render 'form' %>
+
   <% else %>
-  <p><%= redirect_to new_user_session_path %>
-<% end %>
+  <p><%= link_to 'sign in', new_user_session_path %> </p>
+<% end %> `

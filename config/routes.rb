@@ -1,4 +1,6 @@
 Criminaldb::Application.routes.draw do
+  resources :criminals
+  resources :home
   devise_for :users
   root :to => "home#index"
 

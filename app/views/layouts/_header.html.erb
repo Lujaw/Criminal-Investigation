@@ -2,6 +2,11 @@
   <hgroup>
     <a href="#" title="Criminal Investigation"><img src="../images/logo.gif" alt="Criminal Investigation" height=100px width=100px/>
     <h1>Criminal Investigation </h1>   </a>
-    <h2>Defending Our Nation. Securing The Future </h2>
+    <h2>Defending Our Nation. Securing The Future </h2
+      <% if user_signed_in?%>
+          <span id = "welcome_message"><%=current_user.email%> </span>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+
+          <% end %>
   </hgroup>
 </header>
