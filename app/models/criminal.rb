@@ -1,12 +1,12 @@
 class Criminal < ActiveRecord::Base
+   attr_accessible :name, :photo
   mount_uploader :photo, PhotoUploader
-  attr_accessible :name
 
     def self.search(search)
-      if search
-        where('name LIKE ?', "%#{search}%")
-      else
-        scoped
-      end
-   end
+              if search
+                where('name LIKE ?', "%#{search}%")
+              else
+                scoped
+              end
+           end
 end

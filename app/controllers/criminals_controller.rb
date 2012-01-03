@@ -41,10 +41,9 @@ class CriminalsController < ApplicationController
   # POST /criminals.json
   def create
     @criminal = Criminal.new(params[:criminal])
-
     respond_to do |format|
       if @criminal.save
-        format.html { redirect_to @criminal, notice: 'Criminal was successfully created.' }
+        format.html { redirect_to @criminal, notice: 'Photo has been successfully upploaded.' }
         format.json { render json: @criminal, status: :created, location: @criminal }
       else
         format.html { render action: "new" }
