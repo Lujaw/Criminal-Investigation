@@ -1,9 +1,9 @@
 class CriminalsController < ApplicationController
   # GET /criminals
   # GET /criminals.json
+  helper_method :sort_column , :sort_direction
   def index
-    @criminals = Criminal.all
-
+    @criminals = Criminal.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @criminals }
@@ -80,4 +80,13 @@ class CriminalsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  private
+    def sort_column
+     Criminal.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+
+    def sort_direction
+     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
 end

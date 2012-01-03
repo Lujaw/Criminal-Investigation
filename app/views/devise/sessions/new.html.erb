@@ -1,6 +1,6 @@
-<div id="sign_in">
+<fieldset id="sign_in">
 
-<h2>Sign in</h2>
+<legend>Sign in</legend>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div><%= f.label :email %><br />
@@ -18,4 +18,4 @@
 
 <%= render :partial => "devise/shared/links" %>
 
-</div>
+</fieldset>

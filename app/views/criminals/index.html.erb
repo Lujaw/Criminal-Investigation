@@ -1,15 +1,21 @@
-<h1>Listing criminals</h1>
+<h1>Criminals Info</h1>
+<%= form_tag criminals_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
 
+  </p>
+<% end %>
 <table>
   <tr>
-    <th>Name</th>
+    <th><%= sortable "name" %></th>
     <th>Gender</th>
     <th>Race</th>
     <th>Eye color</th>
     <th>Hair color</th>
     <th>Photo</th>
     <th>Additional info</th>
-    <th>Age</th>
+    <th><%= sortable "Age" %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -22,16 +28,13 @@
     <td><%= criminal.race %></td>
     <td><%= criminal.eye_color %></td>
     <td><%= criminal.hair_color %></td>
-    <td><%= criminal.photo %></td>
+    <td><%= image_tag criminal.photo_url.to_s %></td>
     <td><%= criminal.additional_info %></td>
     <td><%= criminal.age %></td>
-    <td><%= link_to 'Show', criminal %></td>
-    <td><%= link_to 'Edit', edit_criminal_path(criminal) %></td>
-    <td><%= link_to 'Destroy', criminal, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Profile', criminal %></td>
+    <td><%= link_to 'Remove', criminal, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
+<%= will_paginate @criminals %>
 <br />
-
-<%= link_to 'New Criminal', new_criminal_path %>

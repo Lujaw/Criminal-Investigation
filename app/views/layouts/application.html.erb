@@ -3,8 +3,8 @@
 <head>
   <title>Criminal Investigation</title>
   <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "bootstrap" %>
   <%= javascript_include_tag "application" %>
-  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
   <%= csrf_meta_tags %>
 </head>
 
@@ -13,16 +13,17 @@
   <%= render 'layouts/header' %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-</div>
+
 
  <% if user_signed_in? %>
     <ul class="tabs">
-    <li><a href="../home">Home</a></li>
-    <li><a href="../criminals">Records</a></li>
+    <li><a href="../criminals">Home</a></li>
     <li><a href="../criminals/new">Upload Photo</a></li>
     </ul>
 <%end%>
 <%= yield %>
+
 </body>
   <%= render 'layouts/footer' %>
+</div>
 </html>
