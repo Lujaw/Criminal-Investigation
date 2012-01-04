@@ -68,11 +68,7 @@ class CriminalsController < ApplicationController
     @criminal = Criminal.new(params[:criminal])
     respond_to do |format|
       if @criminal.save
-        # run = CF::Run.find("presha-2012jan04-121635")
-        #         units = CF::Run.add_units({:run_title => "presha-2012jan04-121635", :units => [{"image_url" => @criminal.photo, :meta_data => @criminal.id}]})
-       run = CF::Run.create("lujaw/criminaldb-4", "test3", [{"image_url" => @criminal.photo, :meta_data => @criminal.id}])
-    #    units = CF::Run.add_units({:run_title => "criminaldb", :units => [{"image_url" => @criminal.photo, :meta_data => @criminal.id}]})
-            binding.pry
+        @criminal.send_to_cf
         format.html { redirect_to @criminal, notice: 'Photo has been successfully upploaded.'}
         format.json { render json: @criminal, status: :created, location: @criminal }
       else
@@ -110,6 +106,13 @@ class CriminalsController < ApplicationController
     end
   end
 
+
+  def result
+    puts params
+    binding.pry
+    puts params
+  end
+
   private
     def sort_column
      Criminal.column_names.include?(params[:sort]) ? params[:sort] : "name"
@@ -120,9 +123,4 @@ class CriminalsController < ApplicationController
     end
 
 
-    def results
-      puts params
-      binding.pry
-      puts params
-    end
 end
