@@ -1,0 +1,7 @@
+<div id='upload_photo'
+<h1>Upload the photo</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', criminals_path %>
+</div>

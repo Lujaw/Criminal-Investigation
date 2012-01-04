@@ -1,0 +1,14 @@
+ <% if user_signed_in? %>
+    <ul class="tabs">
+    <li><a href="../criminals">Home</a></li>
+    <li><a href="../criminals/new">Upload Photo</a></li>
+    </ul>
+<% else %>
+    <p>You are not authorized to enter the site </p>
+<% end %>
+
+<script>
+$(function () {
+$('.tabs').tabs()
+})
+</script>

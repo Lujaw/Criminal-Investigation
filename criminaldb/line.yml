@@ -1,0 +1,47 @@
+#--------------------------------------------------------------------------------
+# Assembly Line: criminaldb
+#--------------------------------------------------------------------------------
+
+# See docs at http://cloudfactory.com/developers/
+# See example lines at http://cloudfactory.com/developers/lines/
+
+# Run `cf login` OR manually specify your API key below (See http://cloudfactory.com/developers/resources/account.html)
+
+title: criminaldb-4
+public: false
+description: It sends the photo to the cloudworkers..
+
+# Department to build line in (See http://cloudfactory.com/developers/resources/department.html)
+department: Digitization
+
+# Line Input Formats (see http://cloudfactory.com/developers/resources/input_format.html)
+input_formats:
+  - name: image_url
+    required: true
+# Stations (see http://cloudfactory.com/developers/resources/station.html)
+stations:
+  # Sample Station #1: WORKER looks at photo of criminal to digitize the information
+  - station:
+      station_index: 1
+      station_type: tournament
+      jury_worker:
+        max_judges: 2
+        reward: 3
+      auto_judge:
+        enabled: true
+        finalize_percentage: 51
+      worker:
+        worker_type: human
+        num_workers: 2
+        reward: 5
+      jury_worker:
+        max_judges: 1
+        confidence_level: 0.65
+        tournament_restarts: 5
+        number: 3
+        reward: 3
+      custom_task_form:
+        form_title: Fill in information from convict photo  - custom form test -local.
+        instruction: Examine the convict photo and fill in all relevant information.
+        html: station1.html
+

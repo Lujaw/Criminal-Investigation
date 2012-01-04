@@ -181,7 +181,7 @@ textarea {
  * Basic and global styles for generating a grid system, structural layout, and page templates
  * ------------------------------------------------------------------------------------------- */
 body {
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -193,9 +193,10 @@ body {
   width: 960px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+//border: 1px solid black;
   height: auto;
   zoom: 1;
+  text-align:center;
 }
 .container:before, .container:after {
   display: table;
@@ -437,7 +438,7 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 36px;
+  line-height: 20px;
 }
 h3 {
   font-size: 18px;
@@ -1110,6 +1111,7 @@ table {
   padding: 0;
   font-size: 13px;
   border-collapse: collapse;
+
 }
 table th, table td {
   padding: 10px 10px 9px;
@@ -1793,6 +1795,7 @@ footer {
   margin-top: 17px;
   padding-top: 17px;
   border-top: 1px solid #eee;
+  text-align:center;
 }
 .page-header {
   margin-bottom: 17px;
@@ -2480,15 +2483,33 @@ header{
   width:400px;
   margin-top: 50px;
   margin-left: auto;
- margin-right: auto;
- border:1px solid black;
+  margin-right: auto;
+  border:1px solid black;
   text-align :center;
 }
 #welcome_message{
   float:right;
   padding: 5px;
 }
-
-
-
-
+#top_line{
+//float:left;
+}
+#criminal-profile{
+  width:100%;
+  height:auto;
+}
+#criminal-photo{
+  float:right;
+}
+#criminal-info{
+  float:left;
+}
+#back-link{
+  text-align:center;
+}
+#upload{
+  float:left;
+  text-align:center;
+  margin :10px;
+  padding:10px;
+}

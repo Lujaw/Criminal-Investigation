@@ -1,0 +1,21 @@
+<%= form_for @criminal, :html => {:multipart => true} do |f| %>
+<% if @criminal.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@criminal.errors.count, "error") %> prohibited this criminal from being saved:</h2>
+
+  <ul>
+    <% @criminal.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div id="upload">
+  <%= f.label :photo ,"Select the Photo " %>
+  <%= f.file_field :photo %>
+</div><br/>
+<div class="actions">
+  <%= f.submit "Submit" %>
+</div>
+<% end %>

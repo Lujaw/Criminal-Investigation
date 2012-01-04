@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+  <style>
+  body {
+    margin: 0 auto;
+    padding: 0;
+    color: #000;
+    width: 960px;
+    background: #302D2F;
+    font-family: georgia;
+  }
+  #wrapper {
+    background: #FFF;
+    position: relative;
+    padding:0 10px;
+  }
+  #header {
+    border-bottom: solid 1px grey;
+    padding: 10px;
+    height: 50px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #666666;
+  }
+
+  ul{
+    list-style: decimal;
+  }
+  input[type=text] {
+    width:400px;
+    margin:4px;
+    font-size: 12px;
+    height:40px;
+  }
+  input[type=submit]{
+    width: 160px;
+    height: 40px;
+    border: solid 1px black;
+  }
+
+  #gender, #age, #location {
+    font-weight: bold;
+    color: #A9BED4;
+  }
+  a{
+    color: #007EB9;
+  }
+  #footer{
+    border-top: solid 1px grey;
+    padding: 10px;
+    text-align: center;
+  }
+  #instructions{
+    border:1px solid black;
+    width:450px;
+  }
+
+  #formarea{
+    color: blue;
+  }
+  #station_1_form{
+  width:450px;
+
+}
+  #photo{
+      float:right;
+     }
+
+  </style>
+</head>
+<body>
+<div id="wrapper">
+  <div id="header">
+    Fill in the information from the picture
+  </div>
+  <div id = "workarea">
+  <div id="instructions">
+    <h2>Instructions:</h2>
+    <ul>
+      <li>See the photo</li>
+      <li>Fill in the information from the board in the photo </li>
+      <li>If some information is missing then you can use your instincts </li>
+    </ul>
+  </div>
+<div id = 'formarea'>
+  <div id="station_1_form">
+    <div id = "field-panel">
+      <p>
+        <form>
+
+          Person's name is : <input type="text" name="output[name]" /><br />
+          <label>Person's Gender is</label><br />
+          <select id="gender_option" name="output[gender]">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <br />
+
+          <label>Person's age </label><br />
+          <select id="age_option" name="output[age]">
+            <option value="Below 20 yrs">Below 20 yrs</option>
+            <option value="20 - 30">20 - 30</option>
+            <option value="30 - 40">30 - 40</option>
+            <option value="40 - 50">40 - 50</option>
+            <option value="Above 50 yrs">Above 50 yrs</option>
+          </select>
+          <br />
+
+          <label>Person's race</label><br />
+          <select id="race_option" name="output[race]">
+            <option value="Asian">Asian</option>
+            <option value="African">African</option>
+            <option value="European">European</option>
+            <option value="Caucasian">Caucasian</option>
+          </select>
+          <br />
+
+          <label>Person's Eye color</label><br />
+          <select id="eyecolor_option" name="output[eyecolor]">
+            <option value="Black">Black</option>
+            <option value="Brown">Brown</option>
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
+          </select>
+          <br />
+
+          <label>Person's Hair color</label><br />
+          <select id="eyecolor_option" name="output[eyecolor]">
+            <option value="Black">Black</option>
+            <option value="Blonde">Blonde</option>
+            <option value="Brunette">Brunette</option>
+            <option value="Other">Other</option>
+          </select>
+          <br />
+
+          <label>Additional Info (if any)</label><br />
+          <textarea rows="2" cols="20" name="output[additional_info]">
+          </textarea>
+
+          <input type="submit" value="submit" />
+
+        </form>
+      </p>
+    </div>
+    </div>
+    <div id ='photo'>
+      <img src='{{image_url}}'>
+askdhgajshdg
+    </div>
+ </div>
+  </div>
+  <div id="footer">
+    Copyright(c)
+  </div>
+</body>
+</html>
+
+<!-- scripts -->
+<script>
+$(document).ready(function() {
+    var url = $("#instructions a").attr('href');
+    var splitted_url = url.split("/");
+    var gender = splitted_url[splitted_url.length - 3];
+    var new_gender = gender.toLowerCase() == "male" ? "female" : "male";
+    splitted_url[splitted_url.length - 3] = new_gender;
+    var age = splitted_url[splitted_url.length - 1];
+    age = decodeURI(age).split(" ")[0];
+    splitted_url[splitted_url.length - 1] = age;
+    var new_url = splitted_url.join("/");
+    $("#instructions a").attr('href',new_url);
+});
+
+</script>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Photo Digitization</title>
+  </head>
+
+   <body>
+  <div id="container">
+   <!-- // <script type="text/javascript" src="http://staging.bizcardarmy.com/javascripts/json2.js"></script>      -->
+<!-- <script type="text/javascript" src="http://staging.bizcardarmy.com/javascripts/jquery.js"></script>
+<script type="text/javascript" src="http://staging.bizcardarmy.com/javascripts/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="http://staging.bizcardarmy.com/javascripts/Placeholder/placeholder.js"></script>   -->
+
+<div id = "container">
+  <header>
+    <h1 class="logo"><a href="/" title="criminal database"></a></h1>
+  </header>
+  <div id = "validation_errors"></div>
+  <form id="form-content">
+    <div id="image-field-wrapper">
+      <div id = 'image-panel' >
+        <a href="{{processed_image_of_image_url_large}}" rel="external" target="_blank" id = "card_image" >
+
+          <img class="card-mage" src="{{image_url}}" >
+          <br/>
+          <div id="big-image-link">(click to see larger image)</div>
+        </a>
+      </div>
+      <div id = 'field-panel'>
+        Person's name<br />
+        <input class="input-field first_name" type="text" name="output[name]" placeholder="Name" title="Name"/>
+
+        <br />Person's age<br />
+          <select id="age_option" name="output[age]">
+            <option value="Below 20 yrs">Below 20 yrs</option>
+            <option value="20 - 30">20 - 30</option>
+            <option value="30 - 40">30 - 40</option>
+            <option value="40 - 50">40 - 50</option>
+            <option value="Above 50 yrs">Above 50 yrs</option>
+          </select>
+
+        <br />Gender<br />
+        <select id="gender_option" name="output[gender]">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+        <br />Person's race<br />
+        <select id="race_option" name="output[race]">
+          <option value="Asian">Asian</option>
+          <option value="African">African</option>
+          <option value="European">European</option>
+          <option value="Caucasian">Caucasian</option>
+        </select>
+        <br />
+         <label>Person's Eye color</label><br />
+          <select id="eyecolor_option" name="output[eye_color]">
+            <option value="Black">Black</option>
+            <option value="Brown">Brown</option>
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
+          </select>
+          <br />
+
+          <label>Person's Hair color</label><br />
+          <select id="eyecolor_option" name="output[hair_color]">
+            <option value="Black">Black</option>
+            <option value="Blonde">Blonde</option>
+            <option value="Brunette">Brunette</option>
+            <option value="Other">Other</option>
+          </select>
+          <br />
+
+          <label>Additional Info (if any)</label><br />
+          <textarea name="output[additional_info]" rows="2" cols="20">
+          </textarea>
+
+           <input type="submit" value="submit" />
+      </div> <!-- End of #field-panelimage-field-wrapper -->
+    </div> <!-- End of #image-field-wrapper -->
+  </form> <!-- End of #form-content -->
+
+</div>
+<footer>
+  <section>
+    Copyright(c)
+  </section>
+</footer>
+
+<!-- stylesheets -->
+<style>
+body {
+  background:#fbfbfb;
+  height:600px;
+  width: 800px;
+  margin-left:auto;
+  margin-right:auto;
+  }
+ #form-content{
+   margin: auto;
+   margin-bottom: 50px;
+   margin-top: 50px;
+   width: 900px;
+ }
+ #image-field-wrapper{
+   float-left;
+   min-width:1050px;
+   overflow:hidden;
+ }
+
+ #image-panel{
+   float:left;
+   padding: 0px 10px 0 10px;
+   overflow:hidden;
+ }
+
+ img {
+   -moz-border-radius: 5px;
+     -webkit-border-radius: 5px;
+     -khtml-border-radius: 5px;
+     border-radius: 5px;
+ }
+
+ #big-image-link{
+   text-align:center;
+ }
+
+ #field-panel{
+   float:left;
+   padding: 0px 10px 0 10px;
+   min-width:512px;
+   overflow:hidden;
+ }
+
+ .input-field{
+   width:150px;
+   margin:4px;
+ }
+
+ .input-field.company, .input-field.job_title, .input-field.email, .input-field.website, .input-field.phone, .input-field.mobile, .input-field.fax, .input-field.address1, .input-field.address2, .input-field.city, .input-field.state, .input-field.country, .input-field.zip{
+   width:230px;
+   margin:4px;
+ }
+
+ .input-field.first_name, .input-field.middle_name, .input-field.last_name, .input-field.company, .input-field.job_title, .input-field.address1, .input-field.address2, .input-field.city, .input-field.state, .input-field.country{
+   text-transform: capitalize
+ }
+
+   .placeholder{
+     color:#aaa;
+   }
+
+ /* Stylesheet for autocomplete */
+ .autocomplete-w1 {
+   background:url(http://staging.bizcardarmy.com/images/shadow.png) no-repeat bottom right;
+   position:absolute;
+   top:0px;
+   left:0px;
+   margin:8px 0 0 6px;
+   /* IE6 fix: */
+   _background:none;
+   _margin:0;perl: warning: Setting locale failed.
+   perl: warning: Please check that your locale settings:
+     LC_ALL = (unset),
+     LC_CTYPE = "en_US.UTF-8",
+     LANG = (unset)
+       are supported and installed on your system.
+   perl: warning: Falling back to the standard locale ("C").
+   <a href="BCA-cloud-form.html" id="" title="BCA-cloud-form">BCA-cloud-form</a>
+ }
+ .autocomplete {
+   border:1px solid #999;
+   background:#FFF;
+   cursor:default;
+   text-align:left;
+   max-height:350px;
+   overflow:auto;
+   margin:0px 6px 6px -6px;
+   /* IE6 specific: */
+   _height:350px;
+   _margin:0; _overflow-x:hidden;
+ }
+ .autocomplete .selected {
+   background:#F0F0F0;
+ }
+ .autocomplete div {
+   padding:2px 5px;
+   white-space:nowrap;
+ }
+ .autocomplete strong {
+   font-weight:normal;
+   color:#3399FF;
+ }
+ header {
+ height: 65px;
+ }
+ header .logo, header .logo a {
+ float: left;
+ width: 222px;
+ height: 47px;
+ }
+ header .logo {
+ margin-top: 9px;
+ }
+ header .logo a {
+ background: url
+ display: block;
+ }
+ .navTop {
+ float: right;
+ margin-top: 25px;
+ }
+ body, select, input, textarea {
+ color: #444;
+ }
+ #container {
+ background: #FDFDFE url(http://www.bizcardarmy.com/images/MarketPages/bg-body.png) left top repeat-x;
+ overflow: hidden;
+ min-width:960px;
+ }
+ #main, footer section, .bottomContent section, header {
+ width: 960px;
+ margin: 0 auto;
+ }
+ .navTop li a:hover, .navTop li.current a {
+ background: #EA4B04;
+ -webkit-border-radius: 3px;
+ -moz-border-radius: 3px;
+ border-radius: 3px;
+ }
+ .navTop li {
+ float: left;
+ padding-left: 15px;
+ }
+ .navTop li a {
+ display: block;
+ padding: 2px 10px;
+ font-size: 16px;
+ font-family: Myriad Pro;
+ text-decoration: none;
+ color: white;
+ }
+ footer {
+ height: 69px;
+ background: url(http://www.bizcardarmy.com/images/MarketPages/bg-footer.png) left top repeat;
+ min-width:960px;
+ }
+ footer .poweredBy {
+ margin-top: 14px;
+ width: 169px;
+ height: 47px;
+ display: block;
+ float: right;
+ background: url(http://www.bizcardarmy.com/images/MarketPages/powerby.png) left top no-repeat;
+ }
+ a:link {
+ -webkit-tap-highlight-color: #FF5E99;
+ }
+
+ img.card-mage{
+   width: 300px;
+   height: 225px;
+ }
+
+ .loupe {
+   border: 1px solid #000;
+ }
+
+ .btn-submit {
+   margin-top: -150px;
+   margin-left: 200px;
+ }
+</style>
+
+<!-- scripts -->
+<script>
+var country_list = ['Afghanistan','Albania','Algeria','American Samoa','Andorra','Angola','Anguilla','Antarctica','Antarctica French Southern territories','Antigua and Barbuda','Argentina','Armenia','Aruba','Australia','Austria','Azerbaijan','Bahamas','Bahrain','Bangladesh','Barbados','Belarus','Belgium','Belize','Benin','Bermuda','Bhutan','Bolivia','Bosnia and Herzegovina','Botswana','Bouvet Island','Brazil','British Indian Ocean Territory','Bulgaria','Burkina Faso','Burundi','Brunei','Cambodia','Cameroon','Canada','Cape Verde','Cayman Islands','Central African Republic','Chad','Cocos (Keeling) Islands','Chile','China','Christmas Island','Colombia','Comoros','Congo Democratic Republic','Congo','Cook Islands','Costa Rica','Cote d\'Ivoire','Croatia','Cuba','Cyprus','Czech Republic','Denmark','Djibouti','Dominica','Dominican Republic','East Timor','Ecuador','Egypt','El Salvador','Eritrea','Equatorial Guinea','Estonia','Ethiopia','Falkland Islands','Faroe Islands','Fiji','Fiji Islands','Finland','France','French Guiana','FrenchPolynesia','Gabon','Gambia','Germany','Georgia','Ghana','Gibraltar','Greece','Greenland','Grenada','Guadeloupe','Guam','Guatemala','Guinea','Guinea-Bissau','Guyana','Haiti','Heard Island and McDonald Islands','Honduras','Hong Kong','Hungary','Iceland','India','Indonesia','Iran','Iraq','Ireland','Israel','Italy','Jamaica','Japan','Jordan','Kazakstan','Kenya','Kiribati','Kuwait','Kyrgyzstan','Laos','Latvia','Lebanon','Lesotho','Liechtenstein','Liberia','Libyan Arab Jamahiriya','Lithuania','Luxembourg','Macao','Macedonia','Madagascar','Malawi','Malaysia','Maldives','Mali','Malta','Marshall Islands','Mauritania','Mauritius','Martinique','Mayotte','Mexico','Micronesia Federated States of','Moldova','Monaco','Mongolia','Montserrat','Morocco','Mozambique','Myanmar','Namibia','Nauru','Nepal','Netherlands','Netherlands Antilles','New Caledonia','New Zealand','Nicaragua','Niger','Nigeria','Niue','Norfolk Island','Northern Mariana Islands','North Korea','Norway','Oman','Pakistan','Palestine','Palau','Panama','Papua New Guinea','Paraguay','Peru','Philippines','Pitcairn','Poland','Portugal','Puerto Rico','Qatar','Reunion','Romania','Russian Federation','Rwanda','Saint Helena','Saint Kitts and Nevis','Saint Pierre and Miquelon','Saint Lucia','Saint Vincent and the Grenadines','Sao Tome and Principe','Samoa','San Marino','Saudi Arabia','Senegal','Seychelles','Sierra Leone','Singapore','Slovakia','Slovenia','Solomon Islands','South Africa','South Georgia and the South Sandwich Islands','South Korea','Somalia','Spain','Sri Lanka','Sudan','Suriname','Svalbard and Jan Mayen','Swaziland','Sweden','Switzerland','Syria','Taiwan','Tanzania','Tajikistan','Thailand','Tokelau','Togo','Tonga','Trinidad and Tobago','Tunisia','Turkey','Turkmenistan','Turks and Caicos Islands','Tuvalu','Uganda','United Arab Emirates','United Kingdom','United States Minor Outlying Islands','United States','Ukraine','Uruguay','Uzbekistan','Vanuatu','Vatican Holy See (Vatican City State)','Venezuela','Vietnam','Virgin Islands GB','Virgin Islands U.S.','Wallis and Futuna','Western Sahara','Yemen','Yugoslavia','Zambia','Zimbabwe'];
+
+$(document).ready(function(){
+  autocomplete_fields = ["first_name", "middle_name", "last_name", "company", "job_title", "city", "state", "zip"];
+
+  $.each(autocomplete_fields, function(index, value){
+    var inputField = "input." + value;
+    $(inputField).autocomplete({
+      serviceUrl: "http://staging.bizcardarmy.com/cards/return_data_for_autocompletion.json",
+      maxHeight: 400,
+      width: 300,
+      zIndex: 9999,
+      params: { field: value }
+    });
+  });
+
+  $('.input-field.country').autocomplete({
+    maxHeight: 400,
+    width: 300,
+    zIndex: 9999,
+    lookup: country_list
+  });
+
+  $('.input-field').placeholder();
+  $('#card_image').loupe({
+    width: 200, // width of magnifier
+    height: 60 // height of magnifier
+  });
+  })//End of document ready
+  // (c) 2010 jdbartlett, MIT license
+  (function(a){a.fn.loupe=function(b){var c=a.extend({loupe:"loupe",width:200,height:150},b||{});return this.length?this.each(function(){var j=a(this),g,k,f=j.is("img")?j:j.find("img:first"),e,h=function(){k.hide()},i;if(j.data("loupe")!=null){return j.data("loupe",b)}e=function(p){var o=f.offset(),q=f.outerWidth(),m=f.outerHeight(),l=c.width/2,n=c.height/2;if(!j.data("loupe")||p.pageX>q+o.left+10||p.pageX<o.left-10||p.pageY>m+o.top+10||p.pageY<o.top-10){return h()}i=i?clearTimeout(i):0;k.show().css({left:p.pageX-l,top:p.pageY-n});g.css({left:-(((p.pageX-o.left)/q)*g.width()-l)|0,top:-(((p.pageY-o.top)/m)*g.height()-n)|0})};k=a("<div />").addClass(c.loupe).css({width:c.width,height:c.height,position:"absolute",overflow:"hidden"}).append(g=a("<img />").attr("src",j.attr(j.is("img")?"src":"href")).css("position","absolute")).mousemove(e).hide().appendTo("body");j.data("loupe",true).mouseenter(e).mouseout(function(){i=setTimeout(h,10)})}):this}}(jQuery));
+
+</script>
+
+  </div>
+</body>
+</html>

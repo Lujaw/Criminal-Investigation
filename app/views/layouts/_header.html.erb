@@ -1,8 +1,10 @@
 <header>
   <hgroup>
-    <a href="#" title="Criminal Investigation"><img src="../images/logo.gif" alt="Criminal Investigation" height=100px width=100px/>
-    <h2>Criminal Investigation </h2>   </a>
-    <h3>Defending Our Nation. Securing The Future </h3>
+    <div id ="top_line">
+      <a href="#" title="Criminal Investigation"><img src="../images/logo.gif" alt="Criminal Investigation" height=50px width=50px/></a>
+      <h3>Criminal Investigation </h3>
+    </div>
+     <h5>Defending Our Nation. Securing The Future </h5>
       <% if user_signed_in?%>
           <div id = "welcome_message"><%=current_user.email%>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
