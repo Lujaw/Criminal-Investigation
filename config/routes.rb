@@ -1,10 +1,11 @@
 Criminaldb::Application.routes.draw do
   resources :criminals
+  resources :results
   resources :home
   devise_for :users
-  root :to => "home#index"
-  match 'cloudfactory/callback' => 'callback#process_notification'
-
+  root :to => "results#index"
+  match 'criminals/result' => 'callback#process_notification'
+  #match 'criminals/result' => 'criminals#result', :via => :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

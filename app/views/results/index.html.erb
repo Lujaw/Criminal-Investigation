@@ -1,0 +1,34 @@
+<%=stylesheet_link_tag("/stylesheet/demo_table_jui.css")%>
+<div id ='result_index'>
+<h1>Criminals Info</h1>
+<table id='result_index_table' class="dataTable">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Race</th>
+    <th>Eye color</th>
+    <th>Hair color</th>
+    <th>Additional info</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+<% @results.each do |result| %>
+  <tr>
+    <td><%= link_to result.name, result %></td>
+    <td><%= result.gender %></td>
+    <td><%= result.age %></td>
+    <td><%= result.race %></td>
+    <td><%= result.eye_color %></td>
+    <td><%= result.hair_color %></td>
+    <td><%= result.additional_info %></td>
+    <td><%= link_to 'Profile', result %></td>
+  </tr>
+<% end %>
+ </tbody>
+</table>
+
+<br />
+</div>

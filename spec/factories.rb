@@ -4,5 +4,6 @@ Factory.define :user do |f|
 end
 
 Factory.define :criminal do |f|
-
+       name "''"
+       user_id "1"
 end

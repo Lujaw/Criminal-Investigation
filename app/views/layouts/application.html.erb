@@ -7,7 +7,6 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-
 <body>
   <div class="container">
   <header>
@@ -15,9 +14,6 @@
   </header>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <div class="container">
-  <%= render 'layouts/tabs' %>
-  </div>
   <%= yield %>
   </div>
 </body>

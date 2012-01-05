@@ -1,0 +1,45 @@
+<div id ="result-profile">
+<div id='result-photo'>
+  <p>
+    <%= image_tag @result.photo ,:class=>"thumbnail"%>
+  </p>
+</div>
+<div id ="result-info">
+<p>
+  <b>Name:</b>
+  <%= @result.name %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @result.gender %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @result.age %>
+</p>
+
+<p>
+  <b>Race:</b>
+  <%= @result.race %>
+</p>
+
+<p>
+  <b>Eye color:</b>
+  <%= @result.eye_color %>
+</p>
+
+<p>
+  <b>Hair color:</b>
+  <%= @result.hair_color %>
+</p>
+
+<p>
+  <b>Additional info:</b>
+  <%= @result.additional_info %>
+</p>
+</div><br/>
+</div>
+
+<%= link_to 'Back', results_path %>

@@ -1,38 +1,85 @@
-/*header{
-text-align :center;
+.pagination span ,.pagination em{
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+      float: left;
+      line-height: 34px;
+      padding: 0 14px;
+      text-decoration: none;
+  }
+.pagination em{
+  font-weight:bold;
+  color:blue;
 }
 
-footer{
-text-align :center;
+#logo {
+    background-image: url("/images/logo.jpg");
+    height: 40px;
+    padding-top: 70px;
+    width: 910px;
+}
+#topnav{
+  float :right;
+  margin-right: 200px;
 }
 
-#sign_in{
-  width:200px;
-  margin:auto;
+
+#topnav li{
+  display:inline;
+  margin:0 55px 0 5px;
+  font-size:1.2em;
+
 }
 
-.container{
-  text-align :center;
-}
 header{
   text-align :center;
   }
+
 #sign_in{
   width:400px;
   margin-top: 50px;
   margin-left: auto;
- margin-right: auto;
- border:1px solid black;
+  margin-right: auto;
+  border:1px solid black;
   text-align :center;
 }
 #welcome_message{
   float:right;
   padding: 5px;
 }
-
 #top_line{
 //float:left;
-
 }
-
-               */
+#criminal-profile{
+  width:905px;
+  height:450px;
+  border:1px solid black;
+}
+#criminal-photo{
+  float:right;
+  margin:10px 10px 0 0;
+}
+#result-info{
+  float:left;
+  text-align:center;
+  padding:40px;
+}
+#result-profile{
+  width:905px;
+  height:450px;
+  border:1px solid black;
+}
+#result-photo{
+  float:right;
+  margin:40px 40px 0 0;
+}
+#criminal-info{
+  float:left;
+}
+#back-link{
+  text-align:center;
+}
+#upload{
+  float:left;
+  text-align:center;
+  margin :10px;
+  padding:10px;
+}

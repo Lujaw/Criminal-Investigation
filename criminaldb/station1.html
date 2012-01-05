@@ -2,19 +2,25 @@
 <html lang="en">
   <head>
     <title>Photo Digitization</title>
-  </head>
-
+    </head>
    <body>
   <div id="container">
    <!-- // <script type="text/javascript" src="http://staging.bizcardarmy.com/javascripts/json2.js"></script>      -->
 <!-- <script type="text/javascript" src="http://staging.bizcardarmy.com/javascripts/jquery.js"></script>
 <script type="text/javascript" src="http://staging.bizcardarmy.com/javascripts/jquery.autocomplete.js"></script>
 <script type="text/javascript" src="http://staging.bizcardarmy.com/javascripts/Placeholder/placeholder.js"></script>   -->
-
 <div id = "container">
   <header>
     <h1 class="logo"><a href="/" title="criminal database"></a></h1>
   </header>
+  <div id="instructions">
+    <h2>Instructions:</h2>
+    <ul>
+      <li>See the photo</li>
+      <li>Fill in the information from the board in the photo </li>
+      <li>If some information is missing then you can use your instincts </li>
+    </ul>
+  </div>
   <div id = "validation_errors"></div>
   <form id="form-content">
     <div id="image-field-wrapper">
@@ -137,60 +143,13 @@ body {
    margin:4px;
  }
 
- .input-field.company, .input-field.job_title, .input-field.email, .input-field.website, .input-field.phone, .input-field.mobile, .input-field.fax, .input-field.address1, .input-field.address2, .input-field.city, .input-field.state, .input-field.country, .input-field.zip{
-   width:230px;
-   margin:4px;
- }
 
- .input-field.first_name, .input-field.middle_name, .input-field.last_name, .input-field.company, .input-field.job_title, .input-field.address1, .input-field.address2, .input-field.city, .input-field.state, .input-field.country{
-   text-transform: capitalize
- }
 
    .placeholder{
      color:#aaa;
    }
 
  /* Stylesheet for autocomplete */
- .autocomplete-w1 {
-   background:url(http://staging.bizcardarmy.com/images/shadow.png) no-repeat bottom right;
-   position:absolute;
-   top:0px;
-   left:0px;
-   margin:8px 0 0 6px;
-   /* IE6 fix: */
-   _background:none;
-   _margin:0;perl: warning: Setting locale failed.
-   perl: warning: Please check that your locale settings:
-     LC_ALL = (unset),
-     LC_CTYPE = "en_US.UTF-8",
-     LANG = (unset)
-       are supported and installed on your system.
-   perl: warning: Falling back to the standard locale ("C").
-   <a href="BCA-cloud-form.html" id="" title="BCA-cloud-form">BCA-cloud-form</a>
- }
- .autocomplete {
-   border:1px solid #999;
-   background:#FFF;
-   cursor:default;
-   text-align:left;
-   max-height:350px;
-   overflow:auto;
-   margin:0px 6px 6px -6px;
-   /* IE6 specific: */
-   _height:350px;
-   _margin:0; _overflow-x:hidden;
- }
- .autocomplete .selected {
-   background:#F0F0F0;
- }
- .autocomplete div {
-   padding:2px 5px;
-   white-space:nowrap;
- }
- .autocomplete strong {
-   font-weight:normal;
-   color:#3399FF;
- }
  header {
  height: 65px;
  }
@@ -271,43 +230,6 @@ body {
    margin-left: 200px;
  }
 </style>
-
-<!-- scripts -->
-<script>
-var country_list = ['Afghanistan','Albania','Algeria','American Samoa','Andorra','Angola','Anguilla','Antarctica','Antarctica French Southern territories','Antigua and Barbuda','Argentina','Armenia','Aruba','Australia','Austria','Azerbaijan','Bahamas','Bahrain','Bangladesh','Barbados','Belarus','Belgium','Belize','Benin','Bermuda','Bhutan','Bolivia','Bosnia and Herzegovina','Botswana','Bouvet Island','Brazil','British Indian Ocean Territory','Bulgaria','Burkina Faso','Burundi','Brunei','Cambodia','Cameroon','Canada','Cape Verde','Cayman Islands','Central African Republic','Chad','Cocos (Keeling) Islands','Chile','China','Christmas Island','Colombia','Comoros','Congo Democratic Republic','Congo','Cook Islands','Costa Rica','Cote d\'Ivoire','Croatia','Cuba','Cyprus','Czech Republic','Denmark','Djibouti','Dominica','Dominican Republic','East Timor','Ecuador','Egypt','El Salvador','Eritrea','Equatorial Guinea','Estonia','Ethiopia','Falkland Islands','Faroe Islands','Fiji','Fiji Islands','Finland','France','French Guiana','FrenchPolynesia','Gabon','Gambia','Germany','Georgia','Ghana','Gibraltar','Greece','Greenland','Grenada','Guadeloupe','Guam','Guatemala','Guinea','Guinea-Bissau','Guyana','Haiti','Heard Island and McDonald Islands','Honduras','Hong Kong','Hungary','Iceland','India','Indonesia','Iran','Iraq','Ireland','Israel','Italy','Jamaica','Japan','Jordan','Kazakstan','Kenya','Kiribati','Kuwait','Kyrgyzstan','Laos','Latvia','Lebanon','Lesotho','Liechtenstein','Liberia','Libyan Arab Jamahiriya','Lithuania','Luxembourg','Macao','Macedonia','Madagascar','Malawi','Malaysia','Maldives','Mali','Malta','Marshall Islands','Mauritania','Mauritius','Martinique','Mayotte','Mexico','Micronesia Federated States of','Moldova','Monaco','Mongolia','Montserrat','Morocco','Mozambique','Myanmar','Namibia','Nauru','Nepal','Netherlands','Netherlands Antilles','New Caledonia','New Zealand','Nicaragua','Niger','Nigeria','Niue','Norfolk Island','Northern Mariana Islands','North Korea','Norway','Oman','Pakistan','Palestine','Palau','Panama','Papua New Guinea','Paraguay','Peru','Philippines','Pitcairn','Poland','Portugal','Puerto Rico','Qatar','Reunion','Romania','Russian Federation','Rwanda','Saint Helena','Saint Kitts and Nevis','Saint Pierre and Miquelon','Saint Lucia','Saint Vincent and the Grenadines','Sao Tome and Principe','Samoa','San Marino','Saudi Arabia','Senegal','Seychelles','Sierra Leone','Singapore','Slovakia','Slovenia','Solomon Islands','South Africa','South Georgia and the South Sandwich Islands','South Korea','Somalia','Spain','Sri Lanka','Sudan','Suriname','Svalbard and Jan Mayen','Swaziland','Sweden','Switzerland','Syria','Taiwan','Tanzania','Tajikistan','Thailand','Tokelau','Togo','Tonga','Trinidad and Tobago','Tunisia','Turkey','Turkmenistan','Turks and Caicos Islands','Tuvalu','Uganda','United Arab Emirates','United Kingdom','United States Minor Outlying Islands','United States','Ukraine','Uruguay','Uzbekistan','Vanuatu','Vatican Holy See (Vatican City State)','Venezuela','Vietnam','Virgin Islands GB','Virgin Islands U.S.','Wallis and Futuna','Western Sahara','Yemen','Yugoslavia','Zambia','Zimbabwe'];
-
-$(document).ready(function(){
-  autocomplete_fields = ["first_name", "middle_name", "last_name", "company", "job_title", "city", "state", "zip"];
-
-  $.each(autocomplete_fields, function(index, value){
-    var inputField = "input." + value;
-    $(inputField).autocomplete({
-      serviceUrl: "http://staging.bizcardarmy.com/cards/return_data_for_autocompletion.json",
-      maxHeight: 400,
-      width: 300,
-      zIndex: 9999,
-      params: { field: value }
-    });
-  });
-
-  $('.input-field.country').autocomplete({
-    maxHeight: 400,
-    width: 300,
-    zIndex: 9999,
-    lookup: country_list
-  });
-
-  $('.input-field').placeholder();
-  $('#card_image').loupe({
-    width: 200, // width of magnifier
-    height: 60 // height of magnifier
-  });
-  })//End of document ready
-  // (c) 2010 jdbartlett, MIT license
-  (function(a){a.fn.loupe=function(b){var c=a.extend({loupe:"loupe",width:200,height:150},b||{});return this.length?this.each(function(){var j=a(this),g,k,f=j.is("img")?j:j.find("img:first"),e,h=function(){k.hide()},i;if(j.data("loupe")!=null){return j.data("loupe",b)}e=function(p){var o=f.offset(),q=f.outerWidth(),m=f.outerHeight(),l=c.width/2,n=c.height/2;if(!j.data("loupe")||p.pageX>q+o.left+10||p.pageX<o.left-10||p.pageY>m+o.top+10||p.pageY<o.top-10){return h()}i=i?clearTimeout(i):0;k.show().css({left:p.pageX-l,top:p.pageY-n});g.css({left:-(((p.pageX-o.left)/q)*g.width()-l)|0,top:-(((p.pageY-o.top)/m)*g.height()-n)|0})};k=a("<div />").addClass(c.loupe).css({width:c.width,height:c.height,position:"absolute",overflow:"hidden"}).append(g=a("<img />").attr("src",j.attr(j.is("img")?"src":"href")).css("position","absolute")).mousemove(e).hide().appendTo("body");j.data("loupe",true).mouseenter(e).mouseout(function(){i=setTimeout(h,10)})}):this}}(jQuery));
-
-</script>
-
-  </div>
+</div>
 </body>
 </html>

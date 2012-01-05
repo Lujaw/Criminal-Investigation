@@ -1,4 +1,5 @@
-<div id ='criminal_index'
+<%=stylesheet_link_tag("/stylesheet/demo_table_jui.css")%>
+<div id ='criminal_index'>
 <h1>Criminals Info</h1>
 <%= form_tag criminals_path, :method => 'get' do %>
   <p>
@@ -6,14 +7,7 @@
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
-
-<script >
-$(function() {
-$("table#criminal_index_table").tablesorter({ sortList: [[1,0]] });
-});
-</script>
-
-<table id='criminal_index_table' class="zebra-striped bordered-table">
+<table id='criminal_index_table' class="zebra-striped bordered-table dataTable">
   <tr>
     <th><%= sortable "name" %></th>
     <th>Gender</th>
@@ -42,6 +36,5 @@ $("table#criminal_index_table").tablesorter({ sortList: [[1,0]] });
   </tr>
 <% end %>
 </table>
-<%= will_paginate @criminals %>
 <br />
 </div>

@@ -88,6 +88,9 @@ GEM
     hashie (1.2.0)
     highline (1.6.9)
     hike (1.2.1)
+    httmultiparty (0.3.6)
+      httparty (>= 0.7.3)
+      multipart-post
     httparty (0.8.1)
       multi_json
       multi_xml
@@ -110,6 +113,7 @@ GEM
     mime-types (1.17.2)
     multi_json (1.0.4)
     multi_xml (0.4.1)
+    multipart-post (1.1.4)
     nokogiri (1.5.0)
     orm_adapter (0.0.5)
     polyglot (0.3.3)
@@ -219,6 +223,7 @@ DEPENDENCIES
   execjs
   factory_girl_rails
   guard-rspec
+  httmultiparty
   jquery-rails
   json
   launchy
