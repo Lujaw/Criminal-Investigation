@@ -5,11 +5,6 @@
     </head>
    <body>
   <div id="container">
-   <!-- // <script type="text/javascript" src="http://staging.bizcardarmy.com/javascripts/json2.js"></script>      -->
-<!-- <script type="text/javascript" src="http://staging.bizcardarmy.com/javascripts/jquery.js"></script>
-<script type="text/javascript" src="http://staging.bizcardarmy.com/javascripts/jquery.autocomplete.js"></script>
-<script type="text/javascript" src="http://staging.bizcardarmy.com/javascripts/Placeholder/placeholder.js"></script>   -->
-<div id = "container">
   <header>
     <h1 class="logo"><a href="/" title="criminal database"></a></h1>
   </header>
@@ -25,19 +20,30 @@
   <form id="form-content">
     <div id="image-field-wrapper">
       <div id = 'image-panel' >
-        <a href="{{processed_image_of_image_url_large}}" rel="external" target="_blank" id = "card_image" >
-
           <img class="card-mage" src="{{image_url}}" >
           <br/>
-          <div id="big-image-link">(click to see larger image)</div>
-        </a>
       </div>
       <div id = 'field-panel'>
+      <fieldset>
+    <legend>Please fill-in the information</legend>
         Person's name<br />
         <input class="input-field first_name" type="text" name="output[name]" placeholder="Name" title="Name"/>
 
+        <br />Gender<br />
+        <ul id="gender">
+        <li>
+        <input id="gender_option" name="output[gender]" type=radio>
+        <label for=Male>Male</label>
+        </li>
+        <li>
+        <input id="gender_option" name="output[gender]" type=radio>
+        <label for=Female>Female</label>
+        </li>
+        </ul>
+
         <br />Person's age<br />
           <select id="age_option" name="output[age]">
+            <option value="null">Guess Age</option>
             <option value="Below 20 yrs">Below 20 yrs</option>
             <option value="20 - 30">20 - 30</option>
             <option value="30 - 40">30 - 40</option>
@@ -45,31 +51,30 @@
             <option value="Above 50 yrs">Above 50 yrs</option>
           </select>
 
-        <br />Gender<br />
-        <select id="gender_option" name="output[gender]">
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
-
         <br />Person's race<br />
         <select id="race_option" name="output[race]">
+          <option value="null">Select Race</option>
           <option value="Asian">Asian</option>
           <option value="African">African</option>
           <option value="European">European</option>
           <option value="Caucasian">Caucasian</option>
+          <option value="Other">Other</option>
         </select>
         <br />
          <label>Person's Eye color</label><br />
           <select id="eyecolor_option" name="output[eye_color]">
+            <option value="null">Select Eye Color</option>
             <option value="Black">Black</option>
             <option value="Brown">Brown</option>
             <option value="Green">Green</option>
             <option value="Blue">Blue</option>
+            <option value="Blue">Other</option>
           </select>
           <br />
 
           <label>Person's Hair color</label><br />
           <select id="eyecolor_option" name="output[hair_color]">
+            <option value="null">Select Hair Color</option>
             <option value="Black">Black</option>
             <option value="Blonde">Blonde</option>
             <option value="Brunette">Brunette</option>
@@ -78,10 +83,11 @@
           <br />
 
           <label>Additional Info (if any)</label><br />
-          <textarea name="output[additional_info]" rows="2" cols="20">
-          </textarea>
+          <textarea placeholder="Peculiar features" name="output[additional_info]" rows="2" cols="20" >
+          </textarea><br />
 
-           <input type="submit" value="submit" />
+           <input type="submit" value="Submit" />
+          </fieldset>
       </div> <!-- End of #field-panelimage-field-wrapper -->
     </div> <!-- End of #image-field-wrapper -->
   </form> <!-- End of #form-content -->
@@ -89,19 +95,39 @@
 </div>
 <footer>
   <section>
-    Copyright(c)
+    Copyright &copy; Cloud Factory
   </section>
 </footer>
+
 
 <!-- stylesheets -->
 <style>
 body {
   background:#fbfbfb;
-  height:600px;
+  height:auto;
   width: 800px;
   margin-left:auto;
   margin-right:auto;
+  background: #999; /* for non-css3 browsers */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#555555'); /* for IE */
+background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#555)); /* for webkit browsers */
+background: -moz-linear-gradient(top,  #fff,  #555); /* for firefox 3.6+ */
   }
+.shadow {
+		-moz-box-shadow: 3px 3px 4px #000;
+		-webkit-box-shadow: 3px 3px 4px #000;
+		box-shadow: 3px 3px 4px #000;
+		/* For IE 8 */
+		-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+		/* For IE 5.5 - 7 */
+		filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+	}
+
+#container{
+	-moz-border-radius-bottomright: 50px;
+border-bottom-right-radius: 50px;
+}
+
  #form-content{
    margin: auto;
    margin-bottom: 50px;
@@ -121,7 +147,7 @@ body {
  }
 
  img {
-   -moz-border-radius: 5px;
+    -moz-border-radius: 5px;
      -webkit-border-radius: 5px;
      -khtml-border-radius: 5px;
      border-radius: 5px;
@@ -130,20 +156,33 @@ body {
  #big-image-link{
    text-align:center;
  }
+fieldset{
+width:390px;
+border:5px groove black;
+text-align:justify;
+padding-left:20px;
 
+}
  #field-panel{
-   float:left;
+   float:right;
    padding: 0px 10px 0 10px;
    min-width:512px;
    overflow:hidden;
  }
 
  .input-field{
-   width:150px;
+   width:190px;
    margin:4px;
  }
+#gender{
+margin:0px;
+padding:0px;
+}
 
-
+#gender li{
+text-decoration:none;
+display:inline;
+}
 
    .placeholder{
      color:#aaa;
@@ -171,15 +210,18 @@ body {
  }
  body, select, input, textarea {
  color: #444;
+  margin:5px 0;
+  width: 200px;
+}
  }
  #container {
- background: #FDFDFE url(http://www.bizcardarmy.com/images/MarketPages/bg-body.png) left top repeat-x;
  overflow: hidden;
  min-width:960px;
  }
  #main, footer section, .bottomContent section, header {
  width: 960px;
  margin: 0 auto;
+
  }
  .navTop li a:hover, .navTop li.current a {
  background: #EA4B04;
@@ -201,8 +243,8 @@ body {
  }
  footer {
  height: 69px;
- background: url(http://www.bizcardarmy.com/images/MarketPages/bg-footer.png) left top repeat;
  min-width:960px;
+ text-align:center;
  }
  footer .poweredBy {
  margin-top: 14px;
@@ -210,7 +252,7 @@ body {
  height: 47px;
  display: block;
  float: right;
- background: url(http://www.bizcardarmy.com/images/MarketPages/powerby.png) left top no-repeat;
+ background: url(http://a2.twimg.com/profile_images/1529339936/CloudFactory_normal.png) left top no-repeat;
  }
  a:link {
  -webkit-tap-highlight-color: #FF5E99;
@@ -229,6 +271,16 @@ body {
    margin-top: -150px;
    margin-left: 200px;
  }
+#instructions{
+  margin:10px 0 0 10px;
+  border:1px solid black ;
+  width:570px;
+  padding:0 9px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 8px;
+}
 </style>
 </div>
 </body>

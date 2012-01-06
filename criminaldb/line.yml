@@ -7,7 +7,7 @@
 
 # Run `cf login` OR manually specify your API key below (See http://cloudfactory.com/developers/resources/account.html)
 
-title: criminaldb-4
+title: criminaldb-6
 public: false
 description: It sends the photo to the cloudworkers..
 
